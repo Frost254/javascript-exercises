@@ -1,4 +1,15 @@
-const findTheOldest = function() {
+const findTheOldest = (person) => {
+  let oldestPerson = person[0];
+    if (!person.yearOfDeath) {
+        person.yearOfDeath = new Date().getFullYear();
+  }
+  for (let i = 1; i < person.length; i++) {
+    let currentPerson = person[i];
+    if ((currentPerson.death - currentPerson.birth) > (oldestPerson.death - oldestPerson.birth)) {
+      oldestPerson = currentPerson;
+    }
+}
+  return oldestPerson;
 
 };
 
