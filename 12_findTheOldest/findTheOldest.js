@@ -5,13 +5,12 @@ const findTheOldest = (person) => {
   }
   for (let i = 1; i < person.length; i++) {
     let currentPerson = person[i];
-    if ((currentPerson.death - currentPerson.birth) > (oldestPerson.death - oldestPerson.birth)) {
-      oldestPerson = currentPerson;
+    if ((currentPerson.yearOfDeath - currentPerson.yearOfBirth) > (oldestPerson.yearOfDeath - oldestPerson.yearOfBirth)) {
+        currentPerson.yearOfDeath = new Date().getFullYear() ? oldestPerson = currentPerson : ""
     }
 }
   return oldestPerson;
 
 };
-
 // Do not edit below this line
 module.exports = findTheOldest;
